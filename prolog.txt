@@ -1,0 +1,101 @@
+1**  Family Tree
+boy(ahmad).
+father(rashid,ahmad).
+
+reads_a_book(saeed).
+reads_a_book(khalid):-happy(khalid).
+
+happy(khalid).
+
+author(saeed):- reads_a_book(saeed).
+author(khalid):- reads_a_book(khalid).
+
+male(ajim).
+male(ohid).
+female(zai).
+female(konka).
+man(zohari).
+woman(shira).
+
+2**  Arithmatic Operation
+add(x,y,Result).
+   Result is x + y.
+   
+sub(x,y,Result).
+	Result is x - y.
+   
+mul(x,y,Result).
+   Result is x * y.
+   
+div(x,y,Result).
+   Result is x / y.
+     
+mod(x,y,Result).
+   Result is x % y.
+   
+   
+3**  Palindrome number
+palind([]):- write('palindrome').
+palind(L):-
+	append([H/T], [H],L),
+	palind(L):
+	write('Not a palindrome').
+	
+	
+4**  Even or Odd
+even_or-odd:-
+	write('Enter a number');
+	read(N),
+	(N mod z == 0 -> write('even');
+	write('odd')).
+	
+	
+5.  positive or negative
+positive_negative_zero:-
+	write('enter a number:"):-
+	read(N),
+	(N > 0 -> write('Positive');
+	 N < 0 -> write('Negative');
+	 write('zero')).
+	 
+	
+6**  Hello world
+write('Hello World').
+
+7   Find largest among three
+largest_among_three:
+	write('Enter three number represented by commas:'),
+	read(A), read(B), read(C),
+	(A >= B, A >= C -> Max = A;
+	 B >= A, B >= C -> Max = B;
+	 Max = C),
+	 format('largest number : ~d, ~n, [Max]).
+	 
+
+8.  Grade Calculator
+grade_calculator:-
+	write('Enter marks:'),
+	read(Marks),
+	(Marks >= 90 -> Grade = 'A';
+	(Marks >= 80 -> Grade = 'B';
+	(Marks >= 70 -> Grade = 'C';
+	(Marks >= 60 -> Grade = 'D';
+	 Grade = 'F'),
+	 format('Grade: ~w, ~n, [Grade]).
+	 
+9.   Find maximum in two number
+max(X,Y):-
+	(X = Y -> write('Both are equal');
+		X > Y -> (Z is X,
+				write(Z));
+				(Z is Y,
+				write(Z));
+	).
+	
+10. Calculate factorial of number
+fact(0,1).
+fact(N,Result):-
+	N > 0,
+	N1 is N - 1,
+	fact (N1, SubResult),
+	Result is N * SubResult.
